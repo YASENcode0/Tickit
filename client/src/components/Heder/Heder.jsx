@@ -1,7 +1,8 @@
 import React from 'react'
+import "./Heder.css"
 
 export default function Heder() {
   return (
-    <div>Heder</div>
+    <div className='heder'>Heder</div>
   )
 }

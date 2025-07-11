@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import "./Categories.css";
+import Todo from "../Todo/Todo";
 
 export default function Categories() {
-  return (
-    <div>Categories</div>
-  )
+   return (
+      <div className="categories">
+         <Todo />
+      </div>
+   );
 }
