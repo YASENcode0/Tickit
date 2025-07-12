@@ -1,5 +1,71 @@
-.heder{
-    background-color: red;
-    height:8rem ;
-    flex: 1;
+.heder {
+  /* background-color: red; */
+  height: 8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.heder-box1 {
+  /* background-color: green; */
+  flex: 1;
+}
+.heder-box2 {
+  flex: 1;
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* switch-btn */
+.switch-btn {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  /* width: 12rem; */
+  display: flex;
+  justify-content: space-around;
+  border: #e0e0e0 solid 1px;
+  border-radius: 0.5rem;
+}
+.switch-btn div {
+  width: 4rem;
+  height: 1.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid transparent 1px;
+  border-radius: 0.5rem;
+}
+.switch {
+  background-color: #fff;
+  color: #000;
+  /* border-color: red !important; */
+  box-shadow: 0.1px 0.1px 2px 1px #bebebe;
+}
+
+/* search-box */
+.search-box {
+  height: 1.5rem;
+  border: solid 1px #9e9e9e;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.search-box input {
+  all: unset;
+  padding-left: .5rem;
+}
+.search-box button{
+    all: unset;
+    width: 1.5rem;
+    height: 100%;
+}
+/*  */
+.add-type-btn{
+    border-radius: .7rem;
+    height: 2rem   ;
+    color: #fff;
+    background-color: #000;
+    border: none;
 }

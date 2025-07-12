@@ -8,6 +8,7 @@ export default function Main() {
     <div className='main'>
       <Heder/>
       <AllCategories/>
+      <button className='add-todo-btn'>add</button>
     </div>
   )
 }

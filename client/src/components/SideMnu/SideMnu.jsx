@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./SideMnu.css";
-import logo from "../../assets/logos/logo192.png";
+import logo from "../../assets/logos/icon.png";
 
 import { IoIosHome } from "react-icons/io";
+import { MdCloseFullscreen } from "react-icons/md";
 
 export default function SideMnu() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,9 @@ export default function SideMnu() {
     <div className={`side-mnu ${open && "side-mnu-close"}`}>
       <div className="logo-div">
         <img src={logo} alt="logo" />
-        <button onClick={ofOn}>c</button>
+        <button onClick={ofOn}>
+          <MdCloseFullscreen />
+        </button>
       </div>
       <ul>
         <li>

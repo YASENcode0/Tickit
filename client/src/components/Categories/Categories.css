@@ -1,5 +1,11 @@
 .categories {
-   background-color: bisque;
-   width: 10rem;
-   height: 20rem;
+  background-color: #eeeeee;
+  width: fit-content;
+  height: max-content;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: solid 2px #e0e0e0;
+}
+.categories p{
+   margin: .5rem 0;
 }

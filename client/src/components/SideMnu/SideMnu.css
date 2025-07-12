@@ -1,32 +1,42 @@
 .side-mnu {
-  background-color: green;
+  background-color: #eeeeee;
   width: 25%;
   margin: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: start;
   gap: 0.5rem;
-
-  transition: all .5s;
+  border: solid 2px #e0e0e0;
+  transition: all 0.5s;
   overflow: hidden;
 }
-.side-mnu-close{
-    width: 1rem;
-    font-size: larger;
+.side-mnu-close {
+  width: 1rem;
+  font-size: larger;
 }
-
 
 .logo-div {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  color: #9e9e9e;
 }
 .logo-div img {
-  width: 4rem;
+  height: 2rem;
+}
+.logo-div button {
+  all: unset;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: solid 1px;
 }
 
 .side-mnu ul {
@@ -49,4 +59,19 @@
   bottom: 1rem;
   display: flex;
   justify-content: center;
+}
+.sign-button button {
+  width: 3rem;
+  height: 2rem;
+
+  border: none;
+  background-color: #000;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+.side-mnu ul span {
+  color: #9e9e9e;
+}
+.side-mnu ul h3 {
+  color: #616161;
 }
