@@ -8,12 +8,19 @@
   align-items: center;
   justify-content: center;
 }
+/* .login *{
+  align-items: center;
+} */
 .login form {
   display: flex;
+  min-width:20rem;
+  max-width: 60%;
   flex-direction: column;
   justify-content: center;
   align-items: end;
   gap: 1rem;
+  /* background-color: red; */
+
 }
 .login form button {
   width: 100%;
@@ -24,21 +31,27 @@
   color: #fff;
 }
 
-.form-unit{
-    /* background-color: red; */
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    gap: 1rem;
+.form-unit {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  gap: 0.5rem;
 }
-.form-unit input{
-    padding: .5rem;
-    border: solid 1px ;
+.form-unit input {
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+  border: solid 1px;
 }
-.login form hr{
-    width: 100%;
-    height: .05rem;
+.login form hr {
+  width: 100%;
+  height: 0.05rem;
 
-    border: none;
-    background-color: #000;
+  border: none;
+  background-color: #000;
+}
+.form-unit span{
+  color: red;
 }
