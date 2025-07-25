@@ -9,14 +9,6 @@ export default function Login() {
   function inputsLengthValidate(field, length) {
     console.log(field);
 
-    // if (field.target.value < 0) {
-    //   setInputErrs({
-    //     ...inputErrs,
-    //     [field.target.name]: `${length} is required`,
-    //   });
-    //   return
-    // }
-
     if (field.target.value.length < length) {
       setInputErrs({
         ...inputErrs,
@@ -28,7 +20,6 @@ export default function Login() {
   }
 
   function inputsRequiredValidate(input, name) {
-    console.log(input);
     if (!input) {
       setInputErrs({ ...inputErrs, [name]: `${name} is required` });
     }
