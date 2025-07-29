@@ -65,6 +65,7 @@ export default function Login() {
         </div>
         <hr />
         <button
+          type="submit"
           onClick={(e) => {
             login(e);
           }}

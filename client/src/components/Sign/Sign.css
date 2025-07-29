@@ -32,7 +32,6 @@
   background-color: #000;
   color: #fff;
 }
-
 .form-unit {
   /* background-color: red; */
   width: 100%;
@@ -60,3 +59,39 @@
 .form-unit span {
   color: red;
 }
+
+/* verify-window */
+
+.verify-window {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.493);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-box {
+  width: 50%;
+  height: 15rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: .5rem;
+}
+.form-box form input {
+  width: 2rem;
+  height: 2rem;
+}
+
+.inputs-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+/* *verify-window* */
