@@ -1,0 +1,69 @@
+.add-todo , .add-type {
+  background-color: rgba(0, 0, 0, 0.492);
+  position: absolute;
+  z-index: 9;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-todo-box {
+  background-color: #fff;
+  width: 50%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.close-btn {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  /* background-color: red; */
+  width: 100%;
+}
+.close-btn button {
+  margin: 1rem;
+}
+.add-todo-box form {
+  /* background-color: red; */
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.add-todo-box form h1{
+  height: 5%;
+}
+.input-div {
+  /* background-color: gray; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.input-div input {
+  height: 2rem;
+}
+.textarea-div {
+  height: 50%;
+}
+.textarea-div textarea {
+  flex: 1;
+}
+.add-cancel-btn {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-cancel-btn button {
+  width: 5rem;
+}

@@ -1,9 +1,12 @@
 import React from "react";
 import "./Heder.css";
+import { usePopup } from "../../contexts/CategoryPopupContext";
 
 import { CiSearch } from "react-icons/ci";
 
 export default function Heder() {
+  const { openPopup } = usePopup();
+  
   return (
     <div className="heder">
       <div className="heder-box1">
@@ -21,7 +24,9 @@ export default function Heder() {
             <CiSearch />
           </button>
         </div>
-        <button className="add-type-btn">+ add type</button>
+        <button className="add-type-btn" onClick={openPopup}>
+          + add type
+        </button>
       </div>
     </div>
   );
