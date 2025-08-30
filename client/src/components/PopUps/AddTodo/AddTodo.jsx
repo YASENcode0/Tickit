@@ -10,10 +10,24 @@ export default function AddTodo() {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [category, setCategory] = useState("all");
+
+  const [myCategories, setMyCategories] = useState(() => getAllMyCategories());
 
   function clearAll() {
     setTitle("");
     setContent("");
+  }
+  function getAllMyCategories() {
+    const categories = Object.entries(
+      JSON.parse(localStorage.getItem("allTodosCategories")) || []
+    );
+    console.log(category);
+    const myCategories = categories?.map((a) => {
+      return a[0];
+    });
+
+    return myCategories;
   }
 
   return isOpen ? (
@@ -31,22 +45,41 @@ export default function AddTodo() {
         </div>
         <form
           onSubmit={(e) => {
+            console.log(category);
             e.preventDefault();
-            newTodo.addTodo(new Todo(title, content), "play");
+            newTodo.addTodo(new Todo(title, content), category);
             closePopup();
             clearAll();
           }}
         >
           <h1>add new todo</h1>
-          <div className="input-div">
-            <label>title</label>
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => {
-                setTitle(e.target.value);
-              }}
-            />
+          <div className="add-todo-popup-top">
+            <div className="input-div">
+              <label>title</label>
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <label for="categories">Choose a category</label>
+              <select
+                name="my categories"
+                id="categories"
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                }}
+              >
+                {myCategories?.map((option, i) => (
+                  <option value={option} key={i}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
           <div className="input-div textarea-div">
             <label>content</label>

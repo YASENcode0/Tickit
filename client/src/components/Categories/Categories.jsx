@@ -15,7 +15,7 @@ export default function Categories({ todosCategories, CategoryName }) {
       <h4>{CategoryName}</h4>
       <div className="categories-box">
         {todosCategories?.map((todo, i) => (
-          <Todo title={todo.title} content={todo.content} key={i} />
+          <Todo title={todo?.title} content={todo?.content} key={i} />
         ))}
       </div>
     </div>

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useId } from "react";
 
 export default function useTodo() {
   const [todos, setTodos] = useState(() => getAllTodosFromApi());
+  const random = useId();
 
   useEffect(() => {
     localStorage.setItem("allTodosCategories", JSON.stringify(todos));
@@ -24,7 +25,7 @@ export default function useTodo() {
     setTodos((pre) => pre.filter((todo) => todo.id !== id));
   }
   function addCategory(category) {
-    setTodos((pre) => ({ ...pre, [category]: [] }));
+    setTodos((pre) => ({ ...pre, [category || random]: [] }));
     console.log(todos);
   }
 
@@ -33,5 +34,5 @@ export default function useTodo() {
 
 function getAllTodosFromApi() {
   const todos = localStorage.getItem("allTodosCategories");
-  return JSON.parse(todos) || [];
+  return JSON.parse(todos) || { all: [] };
 }
