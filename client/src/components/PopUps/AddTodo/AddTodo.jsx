@@ -14,35 +14,20 @@ export default function AddTodo() {
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("all");
 
-  // const [myCategories, setMyCategories] = useState(() => getAllMyCategories());
-
   function clearAll() {
     setTitle("");
     setContent("");
   }
 
-  const myCategories = useMemo(() => {
-    const categories = Object.entries(todos);
-    console.log(categories);
-    const myCategories = categories?.map((a) => {
-      return a[0];
-    });
-
-    return myCategories;
-  }, [todos]);
-
-  function getAllMyCategories() {
-    // const categories = Object.entries(
-    //   JSON.parse(localStorage.getItem("allTodosCategories")) || []
-    // );
-    const categories = Object.entries(todos);
-    console.log(categories);
-    const myCategories = categories?.map((a) => {
-      return a[0];
-    });
-
-    return myCategories;
-  }
+  // const myCategories = useMemo(() => {
+  //   const categories = Object.entries(todos);
+  //   console.log(categories);
+  //   const myCategories = categories?.map((a) => {
+  //     return a[0];
+  //   });
+  //   return myCategories;
+  // }, [todos]);
+  const myCategories = useMemo(() => Object.keys(todos), [todos]);
 
   return isOpen ? (
     <div className="add-todo">
