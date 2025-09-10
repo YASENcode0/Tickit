@@ -1,28 +1,42 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import "./AddTodo.css";
 import { usePopup } from "../../../contexts/PopupContext";
 import useTodo from "../../../hooks/useTodo";
 import Todo from "../../../Classes/Todo";
+import { useTodos } from "../../../contexts/TodosContext";
 // add todo by category logic**
 export default function AddTodo() {
   const { isOpen, openPopup, closePopup } = usePopup();
   const newTodo = useTodo();
+  const { todos, setTodos } = useTodos();
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [category, setCategory] = useState("all");
 
-  const [myCategories, setMyCategories] = useState(() => getAllMyCategories());
+  // const [myCategories, setMyCategories] = useState(() => getAllMyCategories());
 
   function clearAll() {
     setTitle("");
     setContent("");
   }
+
+  const myCategories = useMemo(() => {
+    const categories = Object.entries(todos);
+    console.log(categories);
+    const myCategories = categories?.map((a) => {
+      return a[0];
+    });
+
+    return myCategories;
+  }, [todos]);
+
   function getAllMyCategories() {
-    const categories = Object.entries(
-      JSON.parse(localStorage.getItem("allTodosCategories")) || []
-    );
-    console.log(category);
+    // const categories = Object.entries(
+    //   JSON.parse(localStorage.getItem("allTodosCategories")) || []
+    // );
+    const categories = Object.entries(todos);
+    console.log(categories);
     const myCategories = categories?.map((a) => {
       return a[0];
     });

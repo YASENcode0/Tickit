@@ -1,7 +1,9 @@
 import { useEffect, useState, useId } from "react";
+import { useTodos } from "../contexts/TodosContext";
 
 export default function useTodo() {
-  const [todos, setTodos] = useState(() => getAllTodosFromApi());
+  // const [todos, setTodos] = useState(() => getAllTodosFromApi());
+  const { todos, setTodos } = useTodos();
   const random = useId();
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function useTodo() {
   return { getAll, addTodo, updateTodo, deleteTodo, addCategory };
 }
 
-function getAllTodosFromApi() {
-  const todos = localStorage.getItem("allTodosCategories");
-  return JSON.parse(todos) || { all: [] };
-}
+// function getAllTodosFromApi() {
+//   const todos = localStorage.getItem("allTodosCategories");
+//   return JSON.parse(todos) || { all: [] };
+// }

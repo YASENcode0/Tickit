@@ -6,11 +6,12 @@ import SignUp from "./components/Sign/SignUp";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import useTodo from "./hooks/useTodo";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { PopupProvider } from "./contexts/PopupContext";
 import AddTodo from "./components/PopUps/AddTodo/AddTodo";
 import { CategoryPopup } from "./contexts/CategoryPopupContext";
+import { TodosState } from "./contexts/TodosContext";
 import AddType from "./components/PopUps/AddCategoryType/AddType";
 
 function App() {
@@ -20,29 +21,31 @@ function App() {
   // }, []);   ----> افحص هل هذه الطريقه صح ام لا , عمل متغير لتفعيل جلب المهام
 
   return (
-    <CategoryPopup>
-      <PopupProvider>
-        <Router>
-          <div className="App">
-            <Routes>
-              <Route
-                element={
-                  <>
-                    <SideMnu />
-                    <Main />
-                    <AddTodo />
-                    <AddType />
-                  </>
-                }
-                path="/"
-              />
-              <Route element={<Login />} path="login" />
-              <Route element={<SignUp />} path="SignUp" />
-            </Routes>
-          </div>
-        </Router>
-      </PopupProvider>
-    </CategoryPopup>
+    <TodosState>
+      <CategoryPopup>
+        <PopupProvider>
+          <Router>
+            <div className="App">
+              <Routes>
+                <Route
+                  element={
+                    <>
+                      <SideMnu />
+                      <Main />
+                      <AddTodo />
+                      <AddType />
+                    </>
+                  }
+                  path="/"
+                />
+                <Route element={<Login />} path="login" />
+                <Route element={<SignUp />} path="SignUp" />
+              </Routes>
+            </div>
+          </Router>
+        </PopupProvider>
+      </CategoryPopup>
+    </TodosState>
   );
 }
 
